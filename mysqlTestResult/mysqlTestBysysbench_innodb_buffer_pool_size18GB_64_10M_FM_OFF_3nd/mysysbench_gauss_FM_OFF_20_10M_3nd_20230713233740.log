@@ -1,0 +1,103 @@
+WARNING: --max-time is deprecated, use --time instead
+sysbench 1.0.11 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 200
+Report intermediate results every 3 second(s)
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest14' doesn't exist) for query 'SELECT c FROM sbtest14 WHERE id=5043446'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest13' doesn't exist) for query 'SELECT c FROM sbtest13 WHERE id=4984901'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest12' doesn't exist) for query 'SELECT c FROM sbtest12 WHERE id=5036668'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+(last message repeated 1 times)
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest9' doesn't exist) for query 'SELECT c FROM sbtest9 WHERE id=3242575'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest15' doesn't exist) for query 'SELECT c FROM sbtest15 WHERE id=5474806'
+(last message repeated 1 times)
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest14' doesn't exist) for query 'SELECT c FROM sbtest14 WHERE id=4999121'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest11' doesn't exist) for query 'SELECT c FROM sbtest11 WHERE id=5013054'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest12' doesn't exist) for query 'SELECT c FROM sbtest12 WHERE id=5030070'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+(last message repeated 1 times)
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest19' doesn't exist) for query 'SELECT c FROM sbtest19 WHERE id=5022820'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest20' doesn't exist) for query 'SELECT c FROM sbtest20 WHERE id=4987867'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest15' doesn't exist) for query 'SELECT c FROM sbtest15 WHERE id=5595481'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest8' doesn't exist) for query 'SELECT c FROM sbtest8 WHERE id=5034352'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest19' doesn't exist) for query 'SELECT c FROM sbtest19 WHERE id=4977458'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest13' doesn't exist) for query 'SELECT c FROM sbtest13 WHERE id=4987927'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest15' doesn't exist) for query 'SELECT c FROM sbtest15 WHERE id=5036254'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest9' doesn't exist) for query 'SELECT c FROM sbtest9 WHERE id=4980368'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest8' doesn't exist) for query 'SELECT c FROM sbtest8 WHERE id=5009255'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest14' doesn't exist) for query 'SELECT c FROM sbtest14 WHERE id=5590867'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest7' doesn't exist) for query 'SELECT c FROM sbtest7 WHERE id=5036994'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest7' doesn't exist) for query 'SELECT c FROM sbtest7 WHERE id=4983272'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest10' doesn't exist) for query 'SELECT c FROM sbtest10 WHERE id=4979735'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest17' doesn't exist) for query 'SELECT c FROM sbtest17 WHERE id=4985870'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest11' doesn't exist) for query 'SELECT c FROM sbtest11 WHERE id=5042818'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest14' doesn't exist) for query 'SELECT c FROM sbtest14 WHERE id=4989242'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest16' doesn't exist) for query 'SELECT c FROM sbtest16 WHERE id=5232776'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest14' doesn't exist) for query 'SELECT c FROM sbtest14 WHERE id=4992527'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest11' doesn't exist) for query 'SELECT c FROM sbtest11 WHERE id=5035768'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest15' doesn't exist) for query 'SELECT c FROM sbtest15 WHERE id=5372308'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest9' doesn't exist) for query 'SELECT c FROM sbtest9 WHERE id=5007880'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest9' doesn't exist) for query 'SELECT c FROM sbtest9 WHERE id=4983161'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest10' doesn't exist) for query 'SELECT c FROM sbtest10 WHERE id=4479771'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest14' doesn't exist) for query 'SELECT c FROM sbtest14 WHERE id=5045859'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest14' doesn't exist) for query 'SELECT c FROM sbtest14 WHERE id=5003633'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest13' doesn't exist) for query 'SELECT c FROM sbtest13 WHERE id=2760242'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest10' doesn't exist) for query 'SELECT c FROM sbtest10 WHERE id=5019268'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest16' doesn't exist) for query 'SELECT c FROM sbtest16 WHERE id=5018311'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest9' doesn't exist) for query 'SELECT c FROM sbtest9 WHERE id=5025149'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest9' doesn't exist) for query 'SELECT c FROM sbtest9 WHERE id=5019221'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest8' doesn't exist) for query 'SELECT c FROM sbtest8 WHERE id=4983229'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest10' doesn't exist) for query 'SELECT c FROM sbtest10 WHERE id=5006497'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest11' doesn't exist) for query 'SELECT c FROM sbtest11 WHERE id=4991205'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest14' doesn't exist) for query 'SELECT c FROM sbtest14 WHERE id=5024640'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest7' doesn't exist) for query 'SELECT c FROM sbtest7 WHERE id=5005238'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest12' doesn't exist) for query 'SELECT c FROM sbtest12 WHERE id=5040337'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest9' doesn't exist) for query 'SELECT c FROM sbtest9 WHERE id=4242055'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest12' doesn't exist) for query 'SELECT c FROM sbtest12 WHERE id=5033228'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest12' doesn't exist) for query 'SELECT c FROM sbtest12 WHERE id=5035825'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest14' doesn't exist) for query 'SELECT c FROM sbtest14 WHERE id=5003378'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest20' doesn't exist) for query 'SELECT c FROM sbtest20 WHERE id=5028204'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest13' doesn't exist) for query 'SELECT c FROM sbtest13 WHERE id=5007481'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest12' doesn't exist) for query 'SELECT c FROM sbtest12 WHERE id=4912670'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest8' doesn't exist) for query 'SELECT c FROM sbtest8 WHERE id=4987502'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest9' doesn't exist) for query 'SELECT c FROM sbtest9 WHERE id=5012559'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest9' doesn't exist) for query 'SELECT c FROM sbtest9 WHERE id=4976582'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest13' doesn't exist) for query 'SELECT c FROM sbtest13 WHERE id=4995653'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest7' doesn't exist) for query 'SELECT c FROM sbtest7 WHERE id=5055948'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest7' doesn't exist) for query 'SELECT c FROM sbtest7 WHERE id=5041116'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest13' doesn't exist) for query 'SELECT c FROM sbtest13 WHERE id=4994284'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest8' doesn't exist) for query 'SELECT c FROM sbtest8 WHERE id=5041589'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:49: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest17' doesn't exist) for query 'SELECT c FROM sbtest17 WHERE id=5034122'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest9' doesn't exist) for query 'SELECT c FROM sbtest9 WHERE id=5169007'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest8' doesn't exist) for query 'SELECT c FROM sbtest8 WHERE id=5403385'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest9' doesn't exist) for query 'SELECT c FROM sbtest9 WHERE id=3974220'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest14' doesn't exist) for query 'SELECT c FROM sbtest14 WHERE id=5048559'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest19' doesn't exist) for query 'SELECT c FROM sbtest19 WHERE id=5015996'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest8' doesn't exist) for query 'SELECT c FROM sbtest8 WHERE id=4175699'

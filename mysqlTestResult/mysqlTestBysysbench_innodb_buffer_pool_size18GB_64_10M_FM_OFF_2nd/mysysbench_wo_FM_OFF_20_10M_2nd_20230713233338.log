@@ -1,0 +1,130 @@
+WARNING: --max-time is deprecated, use --time instead
+sysbench 1.0.11 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 200
+Report intermediate results every 3 second(s)
+Initializing random number generator from current time
+
+Forcing shutdown in 361 seconds
+
+Initializing worker threads...
+
+Threads started!
+
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest8' doesn't exist) for query 'UPDATE sbtest8 SET k=k+1 WHERE id=5022383'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest10' doesn't exist) for query 'UPDATE sbtest10 SET k=k+1 WHERE id=5233368'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest14' doesn't exist) for query 'UPDATE sbtest14 SET k=k+1 WHERE id=5011996'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest12' doesn't exist) for query 'UPDATE sbtest12 SET k=k+1 WHERE id=5036710'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest7' doesn't exist) for query 'UPDATE sbtest7 SET k=k+1 WHERE id=5000134'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest13' doesn't exist) for query 'UPDATE sbtest13 SET k=k+1 WHERE id=5932205'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest10' doesn't exist) for query 'UPDATE sbtest10 SET k=k+1 WHERE id=4990415'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest8' doesn't exist) for query 'UPDATE sbtest8 SET k=k+1 WHERE id=4997150'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest18' doesn't exist) for query 'UPDATE sbtest18 SET k=k+1 WHERE id=4588593'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest12' doesn't exist) for query 'UPDATE sbtest12 SET k=k+1 WHERE id=4202679'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest16' doesn't exist) for query 'UPDATE sbtest16 SET k=k+1 WHERE id=4997678'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest9' doesn't exist) for query 'UPDATE sbtest9 SET k=k+1 WHERE id=5038983'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest10' doesn't exist) for query 'UPDATE sbtest10 SET k=k+1 WHERE id=3187395'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest15' doesn't exist) for query 'UPDATE sbtest15 SET k=k+1 WHERE id=4834484'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest14' doesn't exist) for query 'UPDATE sbtest14 SET k=k+1 WHERE id=5017953'
+(last message repeated 1 times)
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest8' doesn't exist) for query 'UPDATE sbtest8 SET k=k+1 WHERE id=5047586'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest15' doesn't exist) for query 'UPDATE sbtest15 SET k=k+1 WHERE id=4992630'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest15' doesn't exist) for query 'UPDATE sbtest15 SET k=k+1 WHERE id=5007258'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest11' doesn't exist) for query 'UPDATE sbtest11 SET k=k+1 WHERE id=5402400'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest12' doesn't exist) for query 'UPDATE sbtest12 SET k=k+1 WHERE id=4690248'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest9' doesn't exist) for query 'UPDATE sbtest9 SET k=k+1 WHERE id=4984007'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest12' doesn't exist) for query 'UPDATE sbtest12 SET k=k+1 WHERE id=5048887'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest11' doesn't exist) for query 'UPDATE sbtest11 SET k=k+1 WHERE id=4372339'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest13' doesn't exist) for query 'UPDATE sbtest13 SET k=k+1 WHERE id=5035633'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest11' doesn't exist) for query 'UPDATE sbtest11 SET k=k+1 WHERE id=4992718'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest8' doesn't exist) for query 'UPDATE sbtest8 SET k=k+1 WHERE id=5040182'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest11' doesn't exist) for query 'UPDATE sbtest11 SET k=k+1 WHERE id=5021233'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest9' doesn't exist) for query 'UPDATE sbtest9 SET k=k+1 WHERE id=5032879'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest14' doesn't exist) for query 'UPDATE sbtest14 SET k=k+1 WHERE id=5924330'
+(last message repeated 1 times)
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest17' doesn't exist) for query 'UPDATE sbtest17 SET k=k+1 WHERE id=5014573'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest11' doesn't exist) for query 'UPDATE sbtest11 SET k=k+1 WHERE id=4997143'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest11' doesn't exist) for query 'UPDATE sbtest11 SET k=k+1 WHERE id=5043299'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest11' doesn't exist) for query 'UPDATE sbtest11 SET k=k+1 WHERE id=5715775'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest13' doesn't exist) for query 'UPDATE sbtest13 SET k=k+1 WHERE id=5020048'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest16' doesn't exist) for query 'UPDATE sbtest16 SET k=k+1 WHERE id=5643034'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest11' doesn't exist) for query 'UPDATE sbtest11 SET k=k+1 WHERE id=4996672'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+(last message repeated 1 times)
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest10' doesn't exist) for query 'UPDATE sbtest10 SET k=k+1 WHERE id=5026248'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest8' doesn't exist) for query 'UPDATE sbtest8 SET k=k+1 WHERE id=4807559'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+(last message repeated 5 times)
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest15' doesn't exist) for query 'UPDATE sbtest15 SET k=k+1 WHERE id=4682462'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest7' doesn't exist) for query 'UPDATE sbtest7 SET k=k+1 WHERE id=5032139'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest16' doesn't exist) for query 'UPDATE sbtest16 SET k=k+1 WHERE id=4896058'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest14' doesn't exist) for query 'UPDATE sbtest14 SET k=k+1 WHERE id=4596790'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest17' doesn't exist) for query 'UPDATE sbtest17 SET k=k+1 WHERE id=5020446'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest15' doesn't exist) for query 'UPDATE sbtest15 SET k=k+1 WHERE id=5041190'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest14' doesn't exist) for query 'UPDATE sbtest14 SET k=k+1 WHERE id=5008010'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+(last message repeated 1 times)
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest12' doesn't exist) for query 'UPDATE sbtest12 SET k=k+1 WHERE id=5013630'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest9' doesn't exist) for query 'UPDATE sbtest9 SET k=k+1 WHERE id=4998465'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest10' doesn't exist) for query 'UPDATE sbtest10 SET k=k+1 WHERE id=4976947'
+(last message repeated 3 times)
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest8' doesn't exist) for query 'UPDATE sbtest8 SET k=k+1 WHERE id=4475884'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest9' doesn't exist) for query 'UPDATE sbtest9 SET k=k+1 WHERE id=4983825'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest10' doesn't exist) for query 'UPDATE sbtest10 SET k=k+1 WHERE id=5022895'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest14' doesn't exist) for query 'UPDATE sbtest14 SET k=k+1 WHERE id=5016435'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest13' doesn't exist) for query 'UPDATE sbtest13 SET k=k+1 WHERE id=5212503'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+(last message repeated 1 times)
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest14' doesn't exist) for query 'UPDATE sbtest14 SET k=k+1 WHERE id=5148111'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest12' doesn't exist) for query 'UPDATE sbtest12 SET k=k+1 WHERE id=5001956'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest7' doesn't exist) for query 'UPDATE sbtest7 SET k=k+1 WHERE id=5040432'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest15' doesn't exist) for query 'UPDATE sbtest15 SET k=k+1 WHERE id=4983184'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest16' doesn't exist) for query 'UPDATE sbtest16 SET k=k+1 WHERE id=3863681'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest9' doesn't exist) for query 'UPDATE sbtest9 SET k=k+1 WHERE id=4985772'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+(last message repeated 1 times)
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest8' doesn't exist) for query 'UPDATE sbtest8 SET k=k+1 WHERE id=6679775'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest10' doesn't exist) for query 'UPDATE sbtest10 SET k=k+1 WHERE id=5102757'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest9' doesn't exist) for query 'UPDATE sbtest9 SET k=k+1 WHERE id=5048306'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest18' doesn't exist) for query 'UPDATE sbtest18 SET k=k+1 WHERE id=5041999'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest18' doesn't exist) for query 'UPDATE sbtest18 SET k=k+1 WHERE id=4980286'
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest13' doesn't exist) for query 'UPDATE sbtest13 SET k=k+1 WHERE id=5034678'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+(last message repeated 4 times)
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest16' doesn't exist) for query 'UPDATE sbtest16 SET k=k+1 WHERE id=5049248'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest7' doesn't exist) for query 'UPDATE sbtest7 SET k=k+1 WHERE id=5028941'
+(last message repeated 2 times)
+FATAL: mysql_drv_query() returned error 1146 (Table 'testdb.sbtest15' doesn't exist) for query 'UPDATE sbtest15 SET k=k+1 WHERE id=5022011'
+FATAL: `thread_run' function failed: ...nload/sysbench-1.0.11/tests/include/oltp_legacy/oltp.lua:80: db_query() failed
