@@ -1,6 +1,6 @@
 #!/bin/bash
 NUMBER=1nd
-CONFIG=20_10M_FM_OFF
+CONFIG=20_10M_F_OFF
 INNODB_BUFFER_SIZE=25GB
 OUTPUTPATH=./mysqlTestBysysbench_innodb_buffer_pool_size${INNODB_BUFFER_SIZE}_${CONFIG}_${NUMBER}/
 MYSQLADDR="127.0.0.1"
@@ -83,8 +83,8 @@ function alltest(){
 	duration=$((end_time - start_time))
 	echo "Script run time is: $duration (s)"
 }
-stopMYSQLandRedis
-disableSWAP
-disableAutoNUMA
+#stopMYSQLandRedis
+#disableSWAP
+#disableAutoNUMA
 #preparedata
-#alltest
+alltest
