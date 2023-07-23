@@ -162,7 +162,7 @@ function mainTest(){
 #setPagetableReplication
 #startRedisWithPageReplication
 #startRedis
-prepareData
-mainTest
-#clearData
+#prepareData
+#mainTest
+clearData
 #stopRedis
