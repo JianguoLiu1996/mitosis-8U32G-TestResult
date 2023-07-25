@@ -76,6 +76,7 @@ function startRedisWithPageReplication(){
 function stopRedis(){
 	# stop redis
 	sudo sudo /etc/init.d/redis-server stop
+	sudo kill -9 $(ps aux | grep 'redis' | grep -v grep | tr -s ' '| cut -d ' ' -f 2)
 	wait 
 	ps auxf | grep redis-server
 	sleep 1s

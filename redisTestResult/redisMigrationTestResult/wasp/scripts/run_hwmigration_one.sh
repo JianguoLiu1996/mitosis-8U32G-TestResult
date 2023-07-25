@@ -13,6 +13,7 @@ KEY=$2
 DATA_SIZE=$3
 REQUEST=`expr $KEY / 100`
 TIME=$6
+PERF_EVENTS="bus-cycles,cache-misses,cache-references,dTLB-load-misses,dTLB-loads,iTLB-load-misses,iTLB-loads,armv8_pmuv3_0/bus_access/,armv8_pmuv3_0/bus_cycles/,armv8_pmuv3_0/cpu_cycles/,armv8_pmuv3_0/dtlb_walk/,armv8_pmuv3_0/itlb_walk/,armv8_pmuv3_0/mem_access/,armv8_pmuv3_0/memory_error/,armv8_pmuv3_0/remote_access/,armv8_pmuv3_0/remote_access_rd/"
 
 BENCH_ARGS="-t 20 -c 5 -R --randomize --distinct-client-seed -d $DATA_SIZE --key-maximum=$KEY --key-minimum=1 --ratio=0:1 --key-pattern=R:R --test-time=$TIME --pipeline=10000" 
 DATA_LOAD="-t 20 -c 5 -n $REQUEST -R --randomize --distinct-client-seed -d $DATA_SIZE --key-maximum=$KEY --key-minimum=1 --ratio=1:0 --key-pattern=P:P --pipeline=10000" 
@@ -391,22 +392,23 @@ launch_benchmark_config()
 
 	launch_interference $CONFIG
 
-    $ICOLLECTOR $REDIS_PID perf-$NAME.log > /dev/null 2>&1 &
+    # $ICOLLECTOR $REDIS_PID perf-$NAME.log > /dev/null 2>&1 &
     # $ICOLLECTOR -1 perf-$NAME.log > /dev/null 2>&1 &
-    icollector_pid=$!
+    # icollector_pid=$!
 
 	#$PERF stat -x, -o $OUTFILE --append -e $PERF_EVENTS -p $REDIS_PID &
-	#PERF_PID=$!
+	$PERF stat -x, -o perf-$NAME.log --append -e $PERF_EVENTS -p $REDIS_PID &
+	PERF_PID=$!
 
 	echo -e "\e[0mWaiting for benchmark to be done"
 	
     wait $BENCHMARK_PID
-    kill $icollector_pid
+    # kill $icollector_pid
 	DURATION=$SECONDS
 
 	#sudo kill -9 $REDIS_PID
-	#kill -INT $PERF_PID &> /dev/null
-	#wait $PERF_PID
+	kill -INT $PERF_PID &> /dev/null
+	wait $PERF_PID
 	wait $BENCHMARK_PID 2>/dev/null
 	echo "Execution Time (seconds): $DURATION"
 	echo $DURATION >> record.log
