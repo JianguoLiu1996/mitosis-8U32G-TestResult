@@ -397,7 +397,7 @@ launch_benchmark_config()
     # icollector_pid=$!
 
 	#$PERF stat -x, -o $OUTFILE --append -e $PERF_EVENTS -p $REDIS_PID &
-	$PERF stat -x, -o perf-$NAME.log --append -e $PERF_EVENTS -p $REDIS_PID &
+	$PERF stat -a -x, -o perf-$NAME.log --append -e $PERF_EVENTS -p $REDIS_PID &
 	PERF_PID=$!
 
 	echo -e "\e[0mWaiting for benchmark to be done"
