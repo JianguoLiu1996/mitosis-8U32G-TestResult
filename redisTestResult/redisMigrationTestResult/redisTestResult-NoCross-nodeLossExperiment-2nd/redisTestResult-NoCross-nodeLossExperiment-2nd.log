@@ -1,0 +1,261 @@
+**************************
+***pgtablre test***
+**************************
+redi run round 1......
+***************redi : LPLD***************
+qu : config is LPLD
+set page-table to node:
+-6
+CMD_PREFIX=/home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/bin/numactl -m 3 -c 3 
+redis pid is 1845
+DATA_LOAD is -t 20 -c 5 -n 600000 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=1:0 --key-pattern=P:P --pipeline=10000 , BENCH_ARGS is -t 20 -c 5 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=0:1 --key-pattern=R:R --test-time=900 --pipeline=10000
+/home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/bin/numactl -m 3 -c 3 memtier_benchmark -t 20 -c 5 -n 600000 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=1:0 --key-pattern=P:P --pipeline=10000
+load data......
+/home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/bin/numactl -m 3 -c 3 memtier_benchmark -o redi-LPLD-1.log -t 20 -c 5 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=0:1 --key-pattern=R:R --test-time=900 --pipeline=10000
+begin read......
+first benchmark : 1879
+[0mWaiting for benchmark to be done
+Execution Time (seconds): 1111
+redi : LPLD completed.
+start clean ......
+root      1805  0.0  0.0   7156  5104 ?        S    10:51   0:00 bash /home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/scripts/run_hwmigration_one.sh redi-LPLD-1 60000000 24 LPLD redi 900
+root      1845 85.1 22.0 7259636 7221692 ?     Ssl  10:51  15:46 redis-server 127.0.0.1:6379
+root      1944  0.0  0.0   4372   588 ?        S    11:10   0:00 grep redis
+wait  20s ......
+root      1805  0.0  0.0   7156  5104 ?        S    10:51   0:00 bash /home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/scripts/run_hwmigration_one.sh redi-LPLD-1 60000000 24 LPLD redi 900
+root      1974  0.0  0.0   4372   612 ?        S    11:10   0:00 grep redis
+available: 4 nodes (0-3)
+node 0 cpus: 0 1
+node 0 size: 7937 MB
+node 0 free: 7862 MB
+node 1 cpus: 2 3
+node 1 size: 8031 MB
+node 1 free: 7961 MB
+node 2 cpus: 4 5
+node 2 size: 8031 MB
+node 2 free: 7973 MB
+node 3 cpus: 6 7
+node 3 size: 7967 MB
+node 3 free: 7898 MB
+node distances:
+node   0   1   2   3 
+  0:  10  20  20  20 
+  1:  20  10  20  20 
+  2:  20  20  10  20 
+  3:  20  20  20  10 
+clean  end......
+***************redi : LPLDM***************
+qu : config is LPLDM
+M set page-table to node:
+0
+CMD_PREFIX=/home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/bin/numactl -m 0 -c 0  --pgtablerepl=3
+redis pid is 2014
+DATA_LOAD is -t 20 -c 5 -n 600000 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=1:0 --key-pattern=P:P --pipeline=10000 , BENCH_ARGS is -t 20 -c 5 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=0:1 --key-pattern=R:R --test-time=900 --pipeline=10000
+/home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/bin/numactl -m 0 -c 0 memtier_benchmark -t 20 -c 5 -n 600000 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=1:0 --key-pattern=P:P --pipeline=10000
+load data......
+/home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/bin/numactl -m 0 -c 0 memtier_benchmark -o redi-LPLDM-1.log -t 20 -c 5 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=0:1 --key-pattern=R:R --test-time=900 --pipeline=10000
+begin read......
+first benchmark : 2045
+[0mWaiting for benchmark to be done
+Execution Time (seconds): 1109
+redi : LPLDM completed.
+start clean ......
+root      1976  0.0  0.0   7156  5172 ?        S    11:10   0:00 bash /home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/scripts/run_hwmigration_one.sh redi-LPLDM-1 60000000 24 LPLDM redi 900
+root      2014 85.0 22.0 7259636 7221628 ?     Ssl  11:10  15:42 redis-server 127.0.0.1:6379
+root      2091  0.0  0.0   4372   576 ?        S    11:28   0:00 grep redis
+wait  20s ......
+root      1976  0.0  0.0   7156  5172 ?        S    11:10   0:00 bash /home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/scripts/run_hwmigration_one.sh redi-LPLDM-1 60000000 24 LPLDM redi 900
+root      2108  0.0  0.0   4372   612 ?        S    11:29   0:00 grep redis
+available: 4 nodes (0-3)
+node 0 cpus: 0 1
+node 0 size: 7937 MB
+node 0 free: 7844 MB
+node 1 cpus: 2 3
+node 1 size: 8031 MB
+node 1 free: 7947 MB
+node 2 cpus: 4 5
+node 2 size: 8031 MB
+node 2 free: 7965 MB
+node 3 cpus: 6 7
+node 3 size: 7967 MB
+node 3 free: 7879 MB
+node distances:
+node   0   1   2   3 
+  0:  10  20  20  20 
+  1:  20  10  20  20 
+  2:  20  20  10  20 
+  3:  20  20  20  10 
+clean  end......
+redi run round 2......
+***************redi : LPLD***************
+qu : config is LPLD
+set page-table to node:
+-6
+CMD_PREFIX=/home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/bin/numactl -m 3 -c 3 
+redis pid is 2145
+DATA_LOAD is -t 20 -c 5 -n 600000 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=1:0 --key-pattern=P:P --pipeline=10000 , BENCH_ARGS is -t 20 -c 5 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=0:1 --key-pattern=R:R --test-time=900 --pipeline=10000
+/home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/bin/numactl -m 3 -c 3 memtier_benchmark -t 20 -c 5 -n 600000 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=1:0 --key-pattern=P:P --pipeline=10000
+load data......
+/home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/bin/numactl -m 3 -c 3 memtier_benchmark -o redi-LPLD-2.log -t 20 -c 5 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=0:1 --key-pattern=R:R --test-time=900 --pipeline=10000
+begin read......
+first benchmark : 2176
+[0mWaiting for benchmark to be done
+Execution Time (seconds): 1101
+redi : LPLD completed.
+start clean ......
+root      2110  0.0  0.0   7156  5120 ?        S    11:29   0:00 bash /home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/scripts/run_hwmigration_one.sh redi-LPLD-2 60000000 24 LPLD redi 900
+root      2145 84.5 22.0 7259636 7221684 ?     Ssl  11:29  15:30 redis-server 127.0.0.1:6379
+root      2263  0.0  0.0   4372   592 ?        S    11:47   0:00 grep redis
+wait  20s ......
+root      2110  0.0  0.0   7156  5120 ?        S    11:29   0:00 bash /home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/scripts/run_hwmigration_one.sh redi-LPLD-2 60000000 24 LPLD redi 900
+root      2281  0.0  0.0   4372   640 ?        S    11:47   0:00 grep redis
+available: 4 nodes (0-3)
+node 0 cpus: 0 1
+node 0 size: 7937 MB
+node 0 free: 7840 MB
+node 1 cpus: 2 3
+node 1 size: 8031 MB
+node 1 free: 7946 MB
+node 2 cpus: 4 5
+node 2 size: 8031 MB
+node 2 free: 7965 MB
+node 3 cpus: 6 7
+node 3 size: 7967 MB
+node 3 free: 7882 MB
+node distances:
+node   0   1   2   3 
+  0:  10  20  20  20 
+  1:  20  10  20  20 
+  2:  20  20  10  20 
+  3:  20  20  20  10 
+clean  end......
+***************redi : LPLDM***************
+qu : config is LPLDM
+M set page-table to node:
+0
+CMD_PREFIX=/home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/bin/numactl -m 0 -c 0  --pgtablerepl=3
+redis pid is 2321
+DATA_LOAD is -t 20 -c 5 -n 600000 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=1:0 --key-pattern=P:P --pipeline=10000 , BENCH_ARGS is -t 20 -c 5 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=0:1 --key-pattern=R:R --test-time=900 --pipeline=10000
+/home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/bin/numactl -m 0 -c 0 memtier_benchmark -t 20 -c 5 -n 600000 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=1:0 --key-pattern=P:P --pipeline=10000
+load data......
+/home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/bin/numactl -m 0 -c 0 memtier_benchmark -o redi-LPLDM-2.log -t 20 -c 5 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=0:1 --key-pattern=R:R --test-time=900 --pipeline=10000
+begin read......
+first benchmark : 2353
+[0mWaiting for benchmark to be done
+Execution Time (seconds): 1101
+redi : LPLDM completed.
+start clean ......
+root      2283  0.0  0.0   7156  5080 ?        S    11:47   0:00 bash /home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/scripts/run_hwmigration_one.sh redi-LPLDM-2 60000000 24 LPLDM redi 900
+root      2321 84.7 22.0 7259636 7221664 ?     Ssl  11:47  15:32 redis-server 127.0.0.1:6379
+root      2385  0.0  0.0   4372   588 ?        S    12:06   0:00 grep redis
+wait  20s ......
+root      2283  0.0  0.0   7156  5080 ?        S    11:47   0:00 bash /home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/scripts/run_hwmigration_one.sh redi-LPLDM-2 60000000 24 LPLDM redi 900
+root      2400  0.0  0.0   4372   636 ?        S    12:06   0:00 grep redis
+available: 4 nodes (0-3)
+node 0 cpus: 0 1
+node 0 size: 7937 MB
+node 0 free: 7827 MB
+node 1 cpus: 2 3
+node 1 size: 8031 MB
+node 1 free: 7934 MB
+node 2 cpus: 4 5
+node 2 size: 8031 MB
+node 2 free: 7951 MB
+node 3 cpus: 6 7
+node 3 size: 7967 MB
+node 3 free: 7864 MB
+node distances:
+node   0   1   2   3 
+  0:  10  20  20  20 
+  1:  20  10  20  20 
+  2:  20  20  10  20 
+  3:  20  20  20  10 
+clean  end......
+redi run round 3......
+***************redi : LPLD***************
+qu : config is LPLD
+set page-table to node:
+-6
+CMD_PREFIX=/home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/bin/numactl -m 3 -c 3 
+redis pid is 2437
+DATA_LOAD is -t 20 -c 5 -n 600000 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=1:0 --key-pattern=P:P --pipeline=10000 , BENCH_ARGS is -t 20 -c 5 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=0:1 --key-pattern=R:R --test-time=900 --pipeline=10000
+/home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/bin/numactl -m 3 -c 3 memtier_benchmark -t 20 -c 5 -n 600000 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=1:0 --key-pattern=P:P --pipeline=10000
+load data......
+/home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/bin/numactl -m 3 -c 3 memtier_benchmark -o redi-LPLD-3.log -t 20 -c 5 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=0:1 --key-pattern=R:R --test-time=900 --pipeline=10000
+begin read......
+first benchmark : 2468
+[0mWaiting for benchmark to be done
+Execution Time (seconds): 1099
+redi : LPLD completed.
+start clean ......
+root      2402  0.0  0.0   7156  5120 ?        S    12:06   0:00 bash /home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/scripts/run_hwmigration_one.sh redi-LPLD-3 60000000 24 LPLD redi 900
+root      2437 84.8 22.0 7259636 7221556 ?     Ssl  12:06  15:32 redis-server 127.0.0.1:6379
+root      2505  0.0  0.0   4372   596 ?        S    12:24   0:00 grep redis
+wait  20s ......
+root      2402  0.0  0.0   7156  5120 ?        S    12:06   0:00 bash /home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/scripts/run_hwmigration_one.sh redi-LPLD-3 60000000 24 LPLD redi 900
+root      2519  0.0  0.0   4372   620 ?        S    12:25   0:00 grep redis
+available: 4 nodes (0-3)
+node 0 cpus: 0 1
+node 0 size: 7937 MB
+node 0 free: 7824 MB
+node 1 cpus: 2 3
+node 1 size: 8031 MB
+node 1 free: 7933 MB
+node 2 cpus: 4 5
+node 2 size: 8031 MB
+node 2 free: 7950 MB
+node 3 cpus: 6 7
+node 3 size: 7967 MB
+node 3 free: 7868 MB
+node distances:
+node   0   1   2   3 
+  0:  10  20  20  20 
+  1:  20  10  20  20 
+  2:  20  20  10  20 
+  3:  20  20  20  10 
+clean  end......
+***************redi : LPLDM***************
+qu : config is LPLDM
+M set page-table to node:
+0
+CMD_PREFIX=/home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/bin/numactl -m 0 -c 0  --pgtablerepl=3
+redis pid is 2559
+DATA_LOAD is -t 20 -c 5 -n 600000 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=1:0 --key-pattern=P:P --pipeline=10000 , BENCH_ARGS is -t 20 -c 5 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=0:1 --key-pattern=R:R --test-time=900 --pipeline=10000
+/home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/bin/numactl -m 0 -c 0 memtier_benchmark -t 20 -c 5 -n 600000 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=1:0 --key-pattern=P:P --pipeline=10000
+load data......
+/home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/bin/numactl -m 0 -c 0 memtier_benchmark -o redi-LPLDM-3.log -t 20 -c 5 -R --randomize --distinct-client-seed -d 24 --key-maximum=60000000 --key-minimum=1 --ratio=0:1 --key-pattern=R:R --test-time=900 --pipeline=10000
+begin read......
+first benchmark : 2591
+[0mWaiting for benchmark to be done
+Execution Time (seconds): 1100
+redi : LPLDM completed.
+start clean ......
+root      2521  0.0  0.0   7156  5124 ?        S    12:25   0:00 bash /home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/scripts/run_hwmigration_one.sh redi-LPLDM-3 60000000 24 LPLDM redi 900
+root      2559 85.6 22.0 7259636 7221672 ?     Ssl  12:25  15:42 redis-server 127.0.0.1:6379
+root      2623  0.0  0.0   4372   588 ?        S    12:43   0:00 grep redis
+wait  20s ......
+root      2521  0.0  0.0   7156  5124 ?        S    12:25   0:00 bash /home/jianguoliu/mitosis-8U32G-TestResult/redisTestResult/redisMigrationTestResult/wasp/scripts/run_hwmigration_one.sh redi-LPLDM-3 60000000 24 LPLDM redi 900
+root      2637  0.0  0.0   4372   620 ?        S    12:43   0:00 grep redis
+available: 4 nodes (0-3)
+node 0 cpus: 0 1
+node 0 size: 7937 MB
+node 0 free: 7811 MB
+node 1 cpus: 2 3
+node 1 size: 8031 MB
+node 1 free: 7920 MB
+node 2 cpus: 4 5
+node 2 size: 8031 MB
+node 2 free: 7936 MB
+node 3 cpus: 6 7
+node 3 size: 7967 MB
+node 3 free: 7851 MB
+node distances:
+node   0   1   2   3 
+  0:  10  20  20  20 
+  1:  20  10  20  20 
+  2:  20  20  10  20 
+  3:  20  20  20  10 
+clean  end......
+**************************
+*** test  end ***
+**************************
