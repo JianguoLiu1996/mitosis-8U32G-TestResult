@@ -2,7 +2,8 @@
 NUMBER=1nd # test times label
 #OUTPUTPATH=./redis_test_result_by_memtier_benchmark_FM_OFF_${NUMBER}/ # output path
 OUTPUTPATH=./ # output path
-CONFIG=FM_OFF # output file label
+#CONFIG=FM_OFF # output file label
+CONFIG=F_OFF # output file label
 CURR_CONFIG=m # pagetable talbe replication cache set sign
 NR_PTCACHE_PAGES=51200 # ---200Mb per socket
 SERVERADDR="localhost" # redis server address
@@ -298,7 +299,7 @@ function mainTest(){
 #setPagetableReplication
 #startRedisWithPageReplication
 #startRedis
-#prepareData
-#mainTest
-clearData
+prepareData
+mainTest
+#clearData
 #stopRedis
