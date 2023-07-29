@@ -31,7 +31,7 @@ function prepareData(){
 function Gauss82(){
 	echo "===begin test for Gauss82==="
 	memtier_benchmark -s ${SERVERADDR} \
-		--test-time=300 \
+		--test-time=900 \
 		--threads=100 \
 		--clients=5 \
 		--pipeline 1 \
