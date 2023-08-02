@@ -2,26 +2,27 @@
 NUMBER=1nd # test times label
 CONFIG=F_OFF # output file label
 #OUTPUTPATH="./memcached_test_result_by_memtier_benchmark_${CONFIG}_3nd/" # output path
-OUTPUTPATH="./" # output path
+OUTPUTPATH="./F/" # output path
 CURR_CONFIG=m # pagetable talbe replication cache set sign
 NR_PTCACHE_PAGES=51200 # ---512Mb per socket
 SERVERADDR="localhost" # redis server address
 function prepareData(){
 	echo "===begin prepare data for test==="
-	memtier_benchmark -s ${SERVERADDR} \
+	memtier_benchmark -p 6379 \
 		-P memcache_text \
-		--threads=20 \
-		--clients=5 \
-		--pipeline 1 \
-		--data-size=2048 \
-		--requests 100000 \
-		-p 6379 \
-		--key-pattern P:P \
-		--ratio=1:0 \
+		-t 20 \
+		-c 5 \
+		-n 2200000 \
+		-R \
+		--randomize \
+		--distinct-client-seed \
+		-d 24 \
+		--key-maximum=220000000 \
 		--key-minimum=1 \
-		--key-maximum=16500000 \
-		--key-prefix=memtier-benchmark-prefix-memcachedtests \
-		--out-file=${OUTPUTPATH}memcached_test_prepare_${CONFIG}_$(date +"%Y%m%d%H%M%S").log
+		--ratio=1:0 \
+		--key-pattern=P:P \
+		--pipeline=10000 \
+		--hide-histogram >> ${OUTPUTPATH}memcached_test_prepare_${CONFIG}_$(date +"%Y%m%d%H%M%S").log
 	wait
 	sleep 1m
 	echo "===success prepare data for test==="
@@ -29,22 +30,22 @@ function prepareData(){
 
 function testOne(){
 	echo "===begin test for testOne==="
-	memtier_benchmark -s ${SERVERADDR} \
-		--test-time=1200 \
+	memtier_benchmark -p 6379 \
 		-P memcache_text \
-		--threads=20 \
-		--clients=5 \
-		--pipeline 1 \
-		--data-size=2048 \
+		-t 20 \
+		-c 5 \
+		--test-time=1200 \
+		-R \
+		--randomize \
 		--distinct-client-seed \
-		-p 6379 \
-		--key-pattern G:G \
-		--ratio=2:8 \
+		-d 24 \
+		--key-maximum=220000000 \
 		--key-minimum=1 \
-		--key-maximum=16500000 \
-		--key-prefix=memtier-benchmark-prefix-memcachedtests \
-		--key-stddev=2750000 \
-		--out-file=${OUTPUTPATH}memcached_test_result_${CONFIG}_${NUMBER}_$(date +"%Y%m%d%H%M%S").log
+		--ratio=0:1 \
+		--key-pattern=R:R \
+		-o ${OUTPUTPATH}memcached_test_result_${CONFIG}_${NUMBER}_$(date +"%Y%m%d%H%M%S").log \
+		--hide-histogram \
+		--pipeline=10000
 	wait
 	sleep 1m
 	echo "===Gauss82 is test end==="
@@ -79,6 +80,8 @@ function stopRedis(){
 	sudo service memcached stop
 	wait
 	sleep 1s
+	sudo kill -9 $(ps aux | grep 'memtier_benchmark' | grep -v grep | tr -s ' '| cut -d ' ' -f 2)
+	sudo kill -9 $(ps aux | grep 'redis' | grep -v grep | tr -s ' '| cut -d ' ' -f 2)
 	sudo kill -9 $(ps aux | grep 'memcached' | grep -v grep | tr -s ' '| cut -d ' ' -f 2)
 	sleep 1s
 	#ps aux | grep memcached
@@ -88,6 +91,7 @@ function stopRedis(){
 function stopMySQL(){
         sudo service mysql stop
         sleep 1s
+	sudo service mysql status
         echo "SIGN: success stop mysql"
 }
 function disableAutoNUMA(){
@@ -165,8 +169,8 @@ function mainTest(){
 #disableSWAP
 #setPagetableReplication
 #startRedisWithPageReplication
-startRedis
-#prepareData
-#mainTest
+#startRedis
+prepareData
+mainTest
 #clearData
 #stopRedis
