@@ -81,8 +81,8 @@ function stopRedis(){
 	wait
 	sleep 1s
 	sudo kill -9 $(ps aux | grep 'memtier_benchmark' | grep -v grep | tr -s ' '| cut -d ' ' -f 2)
-	sudo kill -9 $(ps aux | grep 'redis' | grep -v grep | tr -s ' '| cut -d ' ' -f 2)
-	sudo kill -9 $(ps aux | grep 'memcached' | grep -v grep | tr -s ' '| cut -d ' ' -f 2)
+	sudo kill -9 $(ps aux | grep 'redis' | grep -v grep | grep -v 'bash' | tr -s ' '| cut -d ' ' -f 2)
+	sudo kill -9 $(ps aux | grep 'memcached' | grep -v grep | grep -v 'bash' | tr -s ' '| cut -d ' ' -f 2)
 	sleep 1s
 	#ps aux | grep memcached
 	sudo service memcached status
@@ -170,7 +170,7 @@ function mainTest(){
 #setPagetableReplication
 #startRedisWithPageReplication
 #startRedis
-#prepareData
-#mainTest
+prepareData
+mainTest
 #clearData
-stopRedis
+#stopRedis
