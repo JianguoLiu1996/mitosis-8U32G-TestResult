@@ -27,8 +27,8 @@ ROOT=$(dirname `readlink -f "$0"`)
 # CONFIGS="LPLD RPILD"
 sudo swapoff -a
 
-for round in $(seq 1 3)
-#for round in $(seq 1)
+#for round in $(seq 1 3)
+for round in $(seq 1)
 do
 	echo "$BENCHMARKS run round $round......"
 	for bench in $BENCHMARKS; do
