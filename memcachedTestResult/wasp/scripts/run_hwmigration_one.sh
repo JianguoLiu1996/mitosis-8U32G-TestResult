@@ -177,7 +177,7 @@ prepare_all_pathnames()
 	BENCHPATH="memtier_benchmark"
 	PERF=$ROOT"/bin/perf"
 	#INT_BIN=$ROOT"/bin/bench_stream"
-	INT_BIN=$ROOT"/bin/stream_30B"
+	INT_BIN=$ROOT"/bin/stream_25B"
 	NUMACTL=$ROOT"/bin/numactl"
         ICOLLECTOR=$ROOT"/bin/icollector"
         #if [ ! -e $BENCHPATH ]; then
@@ -416,7 +416,7 @@ launch_benchmark_config()
 	echo "$BENCHMARK : $CONFIG completed."
       
 	#killall bench_stream &>/dev/null
-	sudo killall stream_30B &>/dev/null
+	sudo killall stream_25B &>/dev/null
 
 	# sudo bash clear.sh > /dev/null 2>&1 &
     echo "start clean ......"
