@@ -2,7 +2,7 @@
 NUMBER=1nd # test times label
 CONFIG=FM_OFF # output file label
 #OUTPUTPATH="./memcached_test_result_by_memtier_benchmark_${CONFIG}_3nd/" # output path
-OUTPUTPATH="./FM/" # output path
+OUTPUTPATH="./FM-1st/" # output path
 CURR_CONFIG=m # pagetable talbe replication cache set sign
 NR_PTCACHE_PAGES=51200 # ---512Mb per socket
 SERVERADDR="localhost" # redis server address
@@ -61,14 +61,14 @@ function clearData(){
 
 function startRedis(){
 	# start memcached
-	keydb-server keydb.conf
+	keydb-server /etc/keydb/keydb.conf
 	wait 
 	ps auxf | grep keydb-server
 	sleep 1s
 	echo "SIGN: success start redis"
 }
 function startRedisWithPageReplication(){
-        sudo numactl -r 0-3 keydb-server keydb.conf
+        sudo numactl -r 0-3 keydb-server /etc/keydb/keydb.conf
 	wait 
 	ps auxf | grep keydb-server
 	sleep 1s
@@ -76,22 +76,25 @@ function startRedisWithPageReplication(){
 }
 function stopRedis(){
 	# stop redis
-	sudo service keydb stop
-	sudo service redis stop
-	sudo service memcached stop
-	sleep 1s
+	#sudo service keydb stop
+	#sudo service redis stop
+	#sudo service memcached stop
+	#sleep 1s
+
 	sudo kill -9 $(ps aux | grep 'memtier_benchmark' | grep -v grep | tr -s ' '| cut -d ' ' -f 2)
-	sudo kill -9 $(ps aux | grep 'redis' | grep -v grep | grep -v 'bash' | tr -s ' '| cut -d ' ' -f 2)
-	sudo kill -9 $(ps aux | grep 'memcached' | grep -v grep | grep -v 'bash' | tr -s ' '| cut -d ' ' -f 2)
+	#sudo kill -9 $(ps aux | grep 'redis' | grep -v grep | grep -v 'bash' | tr -s ' '| cut -d ' ' -f 2)
+	#sudo kill -9 $(ps aux | grep 'memcached' | grep -v grep | grep -v 'bash' | tr -s ' '| cut -d ' ' -f 2)
 	sudo kill -9 $(ps aux | grep 'keydb-server' | grep -v grep | grep -v 'bash' | tr -s ' '| cut -d ' ' -f 2)
 	sleep 1s
-	ps aux | grep memcached
+
+	#ps aux | grep memcached
+	#ps aux | grep redis
 	ps aux | grep keydb
-	ps aux | grep redis
 	sleep 1s
-	sudo service memcached status
-	sudo service redis status
-	sudo service keydb status
+
+	#sudo service memcached status
+	#sudo service redis status
+	#sudo service keydb status
 	echo "SIGN: success stop redis"
 }
 function stopMySQL(){
