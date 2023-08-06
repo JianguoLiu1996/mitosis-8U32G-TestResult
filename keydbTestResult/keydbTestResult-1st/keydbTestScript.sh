@@ -1,8 +1,8 @@
 #!/bin/bash
 NUMBER=1nd # test times label
-CONFIG=FM_OFF # output file label
+CONFIG=F_OFF # output file label
 #OUTPUTPATH="./memcached_test_result_by_memtier_benchmark_${CONFIG}_3nd/" # output path
-OUTPUTPATH="./FM-1st/" # output path
+OUTPUTPATH="./F-1st/" # output path
 CURR_CONFIG=m # pagetable talbe replication cache set sign
 NR_PTCACHE_PAGES=51200 # ---512Mb per socket
 SERVERADDR="localhost" # redis server address
@@ -61,7 +61,7 @@ function clearData(){
 
 function startRedis(){
 	# start memcached
-	keydb-server /etc/keydb/keydb.conf
+	sudo keydb-server /etc/keydb/keydb.conf
 	wait 
 	ps auxf | grep keydb-server
 	sleep 1s
@@ -174,12 +174,12 @@ function mainTest(){
 	done
 }
 #stopMySQL
-#disableAutoNUMA
-#disableSWAP
+disableAutoNUMA
+disableSWAP
 #setPagetableReplication
 #startRedisWithPageReplication
-#startRedis
-#prepareData
-#mainTest
+startRedis
+prepareData
+mainTest
 #clearData
-#stopRedis
+stopRedis
