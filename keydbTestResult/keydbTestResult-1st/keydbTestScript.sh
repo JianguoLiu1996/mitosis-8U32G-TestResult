@@ -1,8 +1,8 @@
 #!/bin/bash
 NUMBER=1nd # test times label
-CONFIG=FM_OFF # output file label
+CONFIG=F_OFF # output file label
 #OUTPUTPATH="./memcached_test_result_by_memtier_benchmark_${CONFIG}_3nd/" # output path
-OUTPUTPATH="./FM-3nd/" # output path
+OUTPUTPATH="./F-3nd/" # output path
 CURR_CONFIG=m # pagetable talbe replication cache set sign
 NR_PTCACHE_PAGES=51200 # ---512Mb per socket
 SERVERADDR="localhost" # redis server address
@@ -192,11 +192,11 @@ function mainTest(){
 #stopMySQL
 disableAutoNUMA
 disableSWAP
-setPagetableReplication
-startRedisWithPageReplication
-#startRedis
+#setPagetableReplication
+#startRedisWithPageReplication
+startRedis
 prepareData
 mainTest
 #clearData
 stopRedis
-clearPgReplication
+#clearPgReplication
