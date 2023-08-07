@@ -95,9 +95,14 @@ prepare_basic_config_params()
 	# fi
 
         if [ $1 == "LPLD" ]; then
-                CPU_NODE=3
-                DATA_NODE=3
-                PT_NODE=-6
+                #CPU_NODE=3
+                #DATA_NODE=3
+                #PT_NODE=-6
+
+		# NoCross-nodeLossExperiment
+                CPU_NODE=0
+                DATA_NODE=0
+                PT_NODE=-3
 		echo "qu : config is LPLD"
         fi
 
@@ -310,7 +315,8 @@ launch_benchmark_config()
 	# --- clean up exisiting state/processes
 	#rm /tmp/alloctest-bench.ready &>/dev/null
 	#rm /tmp/alloctest-bench.done &> /dev/null
-	sudo killall bench_stream &>/dev/null
+	#sudo killall bench_stream &>/dev/null
+	sudo killall stream_25B &>/dev/null
 
     CMD_PREFIX=$NUMACTL
     CMD_PREFIX+=" -m $DATA_NODE -c $CPU_NODE "
@@ -320,7 +326,8 @@ launch_benchmark_config()
 #     NODE_MAX=$(echo ${NODESTR##*: } | cut -d " " -f 1)
 #     NODE_MAX=`expr $NODE_MAX - 1`
     if [[ $LAST_CHAR == "M" ]]; then
-        CMD_PREFIX+=" --pgtablerepl=3"
+        #CMD_PREFIX+=" --pgtablerepl=3"
+        CMD_PREFIX+=" --pgtablerepl=0" # NoCross-nodeLossExperiment
     fi
     echo "CMD_PREFIX=$CMD_PREFIX"
     
