@@ -16,19 +16,19 @@ ROOT=$(dirname `readlink -f "$0"`)
 # CONFIGS="I IM"
 #CONFIGS="F"
 #CONFIGS="F I"
-#CONFIGS="LPLD RPILD RPILDM" # It's useful
+CONFIGS="LPLD RPILD RPILDM" # It's useful
 #CONFIGS="LPLD RPILD RPILDM RPLD RPLDM"
 #CONFIGS="RPILD RPILDM"
 # CONFIGS="LPLD RPLD RPLDM"
- CONFIGS="LPLD LPLDM"
+# CONFIGS="LPLD LPLDM"
 # CONFIGS="LPLD"
 #CONFIGS="RPILD"
 # CONFIGS="RPILDM"
 # CONFIGS="LPLD RPILD"
 sudo swapoff -a
 
-#for round in $(seq 1 3)
-for round in $(seq 1)
+for round in $(seq 1 3)
+#for round in $(seq 1)
 do
 	echo "$BENCHMARKS run round $round......"
 	for bench in $BENCHMARKS; do

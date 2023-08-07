@@ -95,14 +95,14 @@ prepare_basic_config_params()
 	# fi
 
         if [ $1 == "LPLD" ]; then
-                #CPU_NODE=3
-                #DATA_NODE=3
-                #PT_NODE=-6
+                CPU_NODE=3
+                DATA_NODE=3
+                PT_NODE=-6
 
                 # NoCross-nodeLossExperiment
-                CPU_NODE=0
-                DATA_NODE=0
-                PT_NODE=-3
+                #CPU_NODE=0
+                #DATA_NODE=0
+                #PT_NODE=-3
 		echo "qu : config is LPLD"
         fi
 
@@ -182,8 +182,9 @@ prepare_all_pathnames()
 	BENCHPATH="memtier_benchmark"
 	PERF=$ROOT"/bin/perf"
 	#INT_BIN=$ROOT"/bin/bench_stream"
-	INT_BIN=$ROOT"/bin/stream_25B"
-	NUMACTL=$ROOT"/bin/numactl"
+	INT_BIN=$ROOT"/bin/stream_30B"
+	#NUMACTL=$ROOT"/bin/numactl"
+	NUMACTL="numactl"
         ICOLLECTOR=$ROOT"/bin/icollector"
         #if [ ! -e $BENCHPATH ]; then
         #    echo "Benchmark binary is missing"
@@ -195,7 +196,7 @@ prepare_all_pathnames()
         fi
         if [ ! -e $NUMACTL ]; then
             echo "numactl is missing"
-            exit
+            #exit
         fi
         if [ ! -e $INT_BIN ]; then
             echo "Interference binary is missing"
@@ -315,7 +316,8 @@ launch_benchmark_config()
 	# --- clean up exisiting state/processes
 	#rm /tmp/alloctest-bench.ready &>/dev/null
 	#rm /tmp/alloctest-bench.done &> /dev/null
-	sudo killall bench_stream &>/dev/null
+	#sudo killall bench_stream &>/dev/null
+	sudo killall stream_30B &>/dev/null
 
     CMD_PREFIX=$NUMACTL
     CMD_PREFIX+=" -m $DATA_NODE -c $CPU_NODE "
@@ -325,8 +327,8 @@ launch_benchmark_config()
 #     NODE_MAX=$(echo ${NODESTR##*: } | cut -d " " -f 1)
 #     NODE_MAX=`expr $NODE_MAX - 1`
     if [[ $LAST_CHAR == "M" ]]; then
-        #CMD_PREFIX+=" --pgtablerepl=3"
-        CMD_PREFIX+=" --pgtablerepl=0" # NoCross-nodeLossExperiment
+        CMD_PREFIX+=" --pgtablerepl=3"
+        #CMD_PREFIX+=" --pgtablerepl=0" # NoCross-nodeLossExperiment
     fi
     echo "CMD_PREFIX=$CMD_PREFIX"
     
@@ -334,7 +336,7 @@ launch_benchmark_config()
     REDIS_PID=0
     if [[ $BENCHMARK == "memcache" ]];then
         # sudo $CMD_PREFIX memcached -d -m 62768 -p 6379 -t 24 -u root
-        sudo $CMD_PREFIX memcached -d -m 8192 -p 6379 -u root
+        sudo $CMD_PREFIX memcached -d -m 8192 -p 6379 -u root -t 2
         REDIS_PID=$(ps aux | grep 'memcached' | grep -v grep | grep -v 'bash' | tr -s ' '| cut -d ' ' -f 2)
 	echo "memcached pid is $REDIS_PID"
         DATA_LOAD=$Memcached_DATA_LOAD
@@ -372,7 +374,8 @@ launch_benchmark_config()
 	#sudo $CMD_PREFIX redis-server redis.conf
 	
         CMD_PREFIX=$NUMACTL
-        CMD_PREFIX+=" -m $DATA_NODE -c $CPU_NODE "
+        #CMD_PREFIX+=" -m $DATA_NODE -c $CPU_NODE "
+        CMD_PREFIX+=" -m 1 -c 1 "
 	LAUNCH_CMD="$CMD_PREFIX $BENCHPATH  $DATA_LOAD"
 #     LAUNCH_CMD="$BENCHPATH  $DATA_LOAD"
 	echo $LAUNCH_CMD #>> $OUTFILE
@@ -422,7 +425,7 @@ launch_benchmark_config()
 	echo "$BENCHMARK : $CONFIG completed."
       
 	#killall bench_stream &>/dev/null
-	sudo killall stream_25B &>/dev/null
+	sudo killall stream_30B &>/dev/null
 
 	# sudo bash clear.sh > /dev/null 2>&1 &
     echo "start clean ......"
