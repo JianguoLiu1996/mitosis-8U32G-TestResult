@@ -375,7 +375,13 @@ launch_benchmark_config()
 	
         CMD_PREFIX=$NUMACTL
         #CMD_PREFIX+=" -m $DATA_NODE -c $CPU_NODE "
+
+	# bind memtier_benchmark test
         CMD_PREFIX+=" -m 1 -c 1 "
+	if [[ $LAST_CHAR == "M" ]]; then
+		CMD_PREFIX+=" --pgtablerepl=1"
+	fi
+
 	LAUNCH_CMD="$CMD_PREFIX $BENCHPATH  $DATA_LOAD"
 #     LAUNCH_CMD="$BENCHPATH  $DATA_LOAD"
 	echo $LAUNCH_CMD #>> $OUTFILE
